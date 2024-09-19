@@ -18,7 +18,7 @@ header, footer {
 .logo {
     font-size: 1.5em;
     font-weight: bold;
-    text-align: start;
+    text-align: center;
     margin: 10px;
 }
 
@@ -222,6 +222,12 @@ main {
         font-size: 30px;
         opacity: 0;
         animation: fadeIn 2s ease-in-out forwards;
+        color: #ffffff;
+        margin: 0;
+        padding: 20px;
+}
+.hero{
+    background-color: #000000;
 }
 @keyframes fadeIn {
     0% {
@@ -286,4 +292,13 @@ main {
 .separator-2{
     height: 1px;
     background-color: #0c0c0c;
+}
+.sous-titre{
+    text-align:center  ;
+}
+.prix{
+    margin-top: 0;
+}
+.article-titres{
+    margin-bottom: 0;
 }
