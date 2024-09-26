@@ -14,11 +14,19 @@ header, footer {
     padding: 20px;
     text-align: center;
 }
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.5s ease;
+}
 
 .logo {
     font-size: 1.5em;
     font-weight: bold;
-    text-align: center;
+    text-align: start;
     margin: 10px;
 }
 
@@ -37,15 +45,10 @@ main {
     padding: 0px;
 }
 
-/* Section Vidéo de Présentation */
-.video-presentation video {
-    position: relative;
-    width: 100%;
-    height: auto;
-   overflow: hidden;
-}
-
 /* Carrousel d'Images */
+.carousel{
+    padding: 10px;
+}
 .carousel-container {
     display: flex;
     overflow-x: scroll;
@@ -62,12 +65,36 @@ main {
     transform: scale(1.05);
 }
 
-/* Section Articles les plus vendus */
-.best-sellers h2 {
+.iconic-title{
     text-align: center;
-    margin-bottom: 20px;
+}
+.iconic-container{
+    overflow-x: auto; /* Permet le défilement horizontal */
+    white-space: nowrap; /* Évite les retours à la ligne pour que tous les éléments restent sur une seule ligne */
 }
 
+.iconic-item img{
+    width: 200px; /* Largeur fixe de l'image, ajustez selon vos besoins */
+    height: auto; /* Conserve les proportions de l'image */
+    display: block; /* Évite les espaces blancs sous les images */
+    border-radius: 4px;
+}
+.iconic-item{
+    flex: 0 0 auto; /* Assure que les éléments ne rétrécissent pas et gardent leur taille */
+    margin: 10px; /* Espacement entre les éléments */
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.horizontal-motion{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.grid-title{
+    text-align: center;
+}
 .image-container {
     overflow-x: auto; /* Permet le défilement horizontal */
     white-space: nowrap; /* Évite les retours à la ligne pour que tous les éléments restent sur une seule ligne */
@@ -81,7 +108,7 @@ main {
   .grid-item {
     flex: 0 0 auto; /* Assure que les éléments ne rétrécissent pas et gardent leur taille */
     margin: 10px; /* Espacement entre les éléments */
-    padding: 10ox;
+    padding: 10px;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -115,38 +142,6 @@ main {
     border-radius: 5px;
 }
 
-/* Section Témoignages */
-.testimonials-container blockquote {
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.testimonials-container cite {
-    display: block;
-    margin-top: 10px;
-    font-style: italic;
-    color: #555555;
-}
-
-/* Section Lookbook */
-.lookbook-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.lookbook-grid img {
-    width: calc(33% - 40px);
-    margin: 10px;
-    transition: transform 0.3s ease;
-}
-
-.lookbook-grid img:hover {
-    transform: scale(1.1);
-}
 
 /* Section Offres Spéciales */
 .special-offer {
@@ -204,16 +199,6 @@ main {
     overflow: hidden;
 }
 
-.fullscreen-video{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
-    transform: translate(-50%);
-    pointer-events: none;
-}
 .slogan{
     text-align: center;
         font-family: "Nerko One", cursive;
@@ -288,11 +273,18 @@ main {
 .separator{
     height: 1px;
     background-color: #ffffff;
+    padding-top: 110px;
 }
 .separator-2{
     height: 1px;
     background-color: #0c0c0c;
 }
+.separator-3{
+    height: 1px;
+    background-color: #ffffff;
+    padding-top: 130 px;
+}
+
 .sous-titre{
     text-align:center  ;
 }
