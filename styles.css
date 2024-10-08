@@ -199,18 +199,20 @@ main {
     overflow: hidden;
 }
 
-.slogan{
+.slogan {
     text-align: center;
-        font-family: "Nerko One", cursive;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 30px;
-        opacity: 0;
-        animation: fadeIn 2s ease-in-out forwards;
-        color: #ffffff;
-        margin: 0;
-        padding: 20px;
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-size: 30px;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Animation douce de l'opacité */
 }
+
 .hero{
     background-color: #000000;
 }
@@ -293,4 +295,172 @@ main {
 }
 .article-titres{
     margin-bottom: 0;
+}
+.hero-image {
+    background-image: url('Disickman image/6041797127862076603.jpg'); /* Chemin vers ton image */
+    background-size: cover;
+    background-position: center;
+    height: 70vh; /* Hauteur de l'écran */
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0; /* Positionné en bas */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Couleur du texte */
+    text-align: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Dégradé d'ombre du bas vers le haut */
+    padding: 20px; /* Espace autour du texte */
+    border-radius: 10px; /* Coins arrondis */
+    width: 100%; /* Prend toute la largeur */
+}
+html,body{
+    overflow-x: hidden;
+}
+.Tendance-h2{
+    text-align: center;
+}
+/* Grille pour les produits */
+.related-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 colonnes ou plus selon l'espace disponible */
+    gap: 20px; /* Espace entre les produits */
+    margin: 20px; /* Marge autour de la grille */
+}
+
+.product-tshirt {
+    text-align: center;
+    background-color: #fff; /* Fond blanc pour le conteneur */
+    border: 1px solid #ddd; /* Bordure légère pour le conteneur */
+    border-radius: 8px; /* Coins arrondis pour le conteneur */
+    padding: 10px; /* Espacement interne */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+}
+
+/* Taille des images */
+.product-tshirt img {
+    width: 100%; /* L'image prend toute la largeur du conteneur */
+    height: auto; /* Hauteur automatique pour maintenir les proportions */
+    border-radius: 8px; /* Coins arrondis pour l'image */
+}
+
+.product-tshirt h3 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Responsive : Ajustements pour les écrans plus petits */
+@media (max-width: 768px) {
+    .related-products {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 2 colonnes sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 480px) {
+    .related-products {
+        grid-template-columns: 1fr; /* 1 colonne sur les très petits écrans */
+    }
+}
+
+/* Style spécifique pour la page produit */
+
+/* Section principale du produit */
+.tshirt-product-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.tshirt-product-carousel {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.carousel-images {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.carousel-images img {
+    max-height: 400px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tshirt-product-page-container .tshirt-product-details {
+    text-align: center;
+    max-width: 600px;
+}
+
+.tshirt-product-page-container .tshirt-product-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.tshirt-product-page-container .tshirt-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.tshirt-product-page-container .tshirt-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Section des produits similaires */
+.tshirt-related-products-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.tshirt-related-products-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.tshirt-related-products-container .tshirt-related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.tshirt-related-products-container .tshirt-product {
+    text-align: center;
+}
+
+.tshirt-related-products-container .tshirt-product img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.tshirt-related-products-container .tshirt-product p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Footer */
+.tshirt-footer-link {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+.tshirt-footer-link:hover {
+    text-decoration: underline;
 }
